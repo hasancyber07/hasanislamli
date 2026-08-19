@@ -1,561 +1,473 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Hasan — Cybersecurity Student Portfolio. Linux, Python, Networking, Web Security." />
-  <title>HASAN // CYBERSEC</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasan Islamli | Cybersecurity Student & Aspiring Professional</title>
+    <meta name="description" content="Portfolio of Hasan Islamli, a Cybersecurity student focused on information security, network security, SOC operations, web security, vulnerability assessment, and practical security learning.">
+    <meta name="keywords" content="Hasan Islamli, Cybersecurity, Information Security, Ethical Hacking, Portfolio, Baku, Azerbaijan, SOC, Network Security">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Hasan Islamli | Cybersecurity Student & Aspiring Professional">
+    <meta property="og:description" content="Cybersecurity Student & Aspiring Professional focused on Information Security, network security, and defensive operations.">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Hasan Islamli | Cybersecurity Student & Aspiring Professional">
+    <meta property="twitter:description" content="Cybersecurity Student & Aspiring Professional focused on Information Security, network security, and defensive operations.">
 
-  <!-- Google Fonts: JetBrains Mono + Orbitron -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="style.css" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- ============================================================
-       CUSTOM CURSOR
-  ============================================================ -->
-  <div class="cursor-dot" id="cursorDot"></div>
-  <div class="cursor-ring" id="cursorRing"></div>
-
-  <!-- ============================================================
-       CANVAS: Matrix Rain Background
-  ============================================================ -->
-  <canvas id="matrixCanvas"></canvas>
-
-  <!-- ============================================================
-       NAVIGATION
-  ============================================================ -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-inner">
-      <a class="nav-logo" href="#hero">
-        <span class="logo-bracket">[</span>HASAN<span class="logo-accent">_SEC</span><span class="logo-bracket">]</span>
-      </a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#terminal">Terminal</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-
-  <!-- ============================================================
-       HERO SECTION
-  ============================================================ -->
-  <section class="hero" id="hero">
-    <div class="hero-content">
-      <!-- Status badge -->
-      <div class="status-badge reveal">
-        <span class="status-dot"></span>
-        <span>SYSTEM ONLINE</span>
-      </div>
-
-      <h1 class="hero-name reveal">
-        <span class="name-prefix">&gt; HASAN</span>
-      </h1>
-
-      <div class="hero-title reveal">
-        <span class="title-label">ROLE //</span>
-        <span class="title-value" id="typingText"></span>
-        <span class="cursor-blink">█</span>
-      </div>
-
-      <p class="hero-desc reveal">
-        Cybersecurity enthusiast. Linux operator. Python developer.<br />
-        Building defenses. Breaking barriers. Securing the future.
-      </p>
-
-      <div class="hero-cta reveal">
-        <a href="#projects" class="btn-primary">
-          <span class="btn-label">View Projects</span>
-          <span class="btn-icon">→</span>
-        </a>
-        <a href="#contact" class="btn-secondary">
-          <span class="btn-label">Get In Touch</span>
-        </a>
-      </div>
-
-      <!-- Hex stats row -->
-      <div class="hero-stats reveal">
-        <div class="stat-item">
-          <span class="stat-val">12+</span>
-          <span class="stat-key">Projects</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <span class="stat-val">3+</span>
-          <span class="stat-key">Years Linux</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <span class="stat-val">CTF</span>
-          <span class="stat-key">Competitor</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Decorative HUD elements -->
-    <div class="hud-corner hud-tl"></div>
-    <div class="hud-corner hud-tr"></div>
-    <div class="hud-corner hud-bl"></div>
-    <div class="hud-corner hud-br"></div>
-
-    <!-- Floating scan line -->
-    <div class="scan-line"></div>
-  </section>
-
-  <!-- ============================================================
-       ABOUT SECTION
-  ============================================================ -->
-  <section class="section about" id="about">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">// 01</span>
-        <h2 class="section-title">About <span class="accent">Me</span></h2>
-        <div class="section-line"></div>
-      </div>
-
-      <div class="about-grid">
-        <!-- Avatar / visual block -->
-        <div class="about-visual reveal">
-          <div class="avatar-frame">
-            <div class="avatar-inner">
-              <div class="avatar-icon">
-                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="50" cy="35" r="20" stroke="var(--green)" stroke-width="2"/>
-                  <path d="M15 85 Q50 55 85 85" stroke="var(--green)" stroke-width="2" fill="none"/>
-                  <!-- shield overlay -->
-                  <path d="M50 60 L65 68 L65 80 Q65 90 50 95 Q35 90 35 80 L35 68 Z" stroke="var(--blue)" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
-                  <path d="M44 77 L48 81 L57 72" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/>
-                </svg>
-              </div>
-              <div class="avatar-rings">
-                <div class="ring ring-1"></div>
-                <div class="ring ring-2"></div>
-                <div class="ring ring-3"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bio text -->
-        <div class="about-text reveal">
-          <div class="glass-card bio-card">
-            <div class="card-header-bar">
-              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green-dot"></span>
-              <span class="card-title-tag">profile.txt</span>
-            </div>
-            <div class="bio-content">
-              <p>
-                I'm <strong>Hasan</strong>, a university IT student with a deep passion for
-                <span class="highlight">cybersecurity</span> and offensive/defensive security research.
-                I spend my days studying vulnerabilities, hardening systems, and building tools
-                that matter.
-              </p>
-              <p>
-                My toolkit revolves around <span class="highlight">Linux</span>, <span class="highlight">Python</span>,
-                and a solid understanding of networking fundamentals. I believe that to defend a system
-                you must first understand how to break it.
-              </p>
-              <p>
-                Currently preparing for <span class="highlight">CompTIA Security+</span> certification
-                and actively participating in Capture The Flag (CTF) competitions to sharpen my skills
-                in real-world scenarios.
-              </p>
-            </div>
-          </div>
-
-          <!-- Focus tags -->
-          <div class="focus-tags">
-            <span class="tag">Cybersecurity</span>
-            <span class="tag">Linux</span>
-            <span class="tag">Python</span>
-            <span class="tag">Networking</span>
-            <span class="tag">CTF</span>
-            <span class="tag">Ethical Hacking</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       SKILLS SECTION
-  ============================================================ -->
-  <section class="section skills" id="skills">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">// 02</span>
-        <h2 class="section-title">Technical <span class="accent">Skills</span></h2>
-        <div class="section-line"></div>
-      </div>
-
-      <div class="skills-grid">
-        <!-- Skill bars -->
-        <div class="skills-bars reveal">
-          <div class="glass-card skill-card">
-            <div class="card-header-bar">
-              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green-dot"></span>
-              <span class="card-title-tag">skills.log</span>
-            </div>
-
-            <div class="skill-item" data-pct="88">
-              <div class="skill-info">
-                <span class="skill-name"><span class="skill-icon">🐧</span> Linux</span>
-                <span class="skill-pct">88%</span>
-              </div>
-              <div class="skill-bar-track">
-                <div class="skill-bar-fill" data-width="88"></div>
-              </div>
-            </div>
-
-            <div class="skill-item" data-pct="80">
-              <div class="skill-info">
-                <span class="skill-name"><span class="skill-icon">🐍</span> Python</span>
-                <span class="skill-pct">80%</span>
-              </div>
-              <div class="skill-bar-track">
-                <div class="skill-bar-fill" data-width="80"></div>
-              </div>
-            </div>
-
-            <div class="skill-item" data-pct="75">
-              <div class="skill-info">
-                <span class="skill-name"><span class="skill-icon">🌐</span> Networking</span>
-                <span class="skill-pct">75%</span>
-              </div>
-              <div class="skill-bar-track">
-                <div class="skill-bar-fill" data-width="75"></div>
-              </div>
-            </div>
-
-            <div class="skill-item" data-pct="70">
-              <div class="skill-info">
-                <span class="skill-name"><span class="skill-icon">🔐</span> Web Security</span>
-                <span class="skill-pct">70%</span>
-              </div>
-              <div class="skill-bar-track">
-                <div class="skill-bar-fill" data-width="70"></div>
-              </div>
-            </div>
-
-            <div class="skill-item" data-pct="65">
-              <div class="skill-info">
-                <span class="skill-name"><span class="skill-icon">⚔️</span> Ethical Hacking</span>
-                <span class="skill-pct">65%</span>
-              </div>
-              <div class="skill-bar-track">
-                <div class="skill-bar-fill" data-width="65"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Hex tool grid -->
-        <div class="skills-tools reveal">
-          <div class="tools-title">// TOOLS & TECH</div>
-          <div class="tools-grid">
-            <div class="tool-hex">Kali<br/>Linux</div>
-            <div class="tool-hex">Nmap</div>
-            <div class="tool-hex">Wireshark</div>
-            <div class="tool-hex">Burp<br/>Suite</div>
-            <div class="tool-hex">Metasploit</div>
-            <div class="tool-hex">Git</div>
-            <div class="tool-hex">Bash</div>
-            <div class="tool-hex">SQL</div>
-            <div class="tool-hex">Docker</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       PROJECTS SECTION
-  ============================================================ -->
-  <section class="section projects" id="projects">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">// 03</span>
-        <h2 class="section-title">Featured <span class="accent">Projects</span></h2>
-        <div class="section-line"></div>
-      </div>
-
-      <div class="projects-grid">
-
-        <!-- Project 1 -->
-        <div class="project-card glass-card reveal">
-          <div class="project-card-glow"></div>
-          <div class="project-header">
-            <div class="project-id">P-001</div>
-            <div class="project-status active">ACTIVE</div>
-          </div>
-          <div class="project-icon-wrap">
-            <svg class="project-icon" viewBox="0 0 48 48" fill="none">
-              <rect x="8" y="8" width="32" height="32" rx="4" stroke="var(--green)" stroke-width="1.5"/>
-              <path d="M16 24h8M16 30h16M16 18h6" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round"/>
-              <circle cx="36" cy="12" r="4" fill="var(--blue)" opacity="0.8"/>
-              <path d="M34.5 12l1 1 2-2" stroke="#fff" stroke-width="1" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3 class="project-name">Password Generator</h3>
-          <p class="project-desc">
-            A cryptographically secure password generator built in Python.
-            Supports custom length, character sets, entropy calculation,
-            and CLI interface for quick use in terminal workflows.
-          </p>
-          <div class="project-tags">
-            <span class="ptag">Python</span>
-            <span class="ptag">CLI</span>
-            <span class="ptag">Cryptography</span>
-          </div>
-          <div class="project-footer">
-            <a href="#" class="project-link">View Code <span>→</span></a>
-            <div class="project-lang-dot"></div>
-          </div>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="project-card glass-card reveal">
-          <div class="project-card-glow"></div>
-          <div class="project-header">
-            <div class="project-id">P-002</div>
-            <div class="project-status active">ACTIVE</div>
-          </div>
-          <div class="project-icon-wrap">
-            <svg class="project-icon" viewBox="0 0 48 48" fill="none">
-              <rect x="4" y="10" width="40" height="28" rx="3" stroke="var(--green)" stroke-width="1.5"/>
-              <path d="M4 16h40" stroke="var(--green)" stroke-width="1"/>
-              <circle cx="10" cy="13" r="1.5" fill="var(--red-dim)"/>
-              <circle cx="16" cy="13" r="1.5" fill="var(--yellow-dim)"/>
-              <circle cx="22" cy="13" r="1.5" fill="var(--green)"/>
-              <path d="M12 26l4-3-4-3M20 26h8" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3 class="project-name">Linux Automation Scripts</h3>
-          <p class="project-desc">
-            A collection of Bash and Python scripts automating repetitive
-            Linux sysadmin tasks: log rotation, user management,
-            system health monitoring, and scheduled backup routines.
-          </p>
-          <div class="project-tags">
-            <span class="ptag">Bash</span>
-            <span class="ptag">Python</span>
-            <span class="ptag">Linux</span>
-          </div>
-          <div class="project-footer">
-            <a href="#" class="project-link">View Code <span>→</span></a>
-            <div class="project-lang-dot blue-dot"></div>
-          </div>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="project-card glass-card reveal">
-          <div class="project-card-glow"></div>
-          <div class="project-header">
-            <div class="project-id">P-003</div>
-            <div class="project-status wip">IN DEV</div>
-          </div>
-          <div class="project-icon-wrap">
-            <svg class="project-icon" viewBox="0 0 48 48" fill="none">
-              <circle cx="24" cy="24" r="16" stroke="var(--blue)" stroke-width="1.5"/>
-              <circle cx="24" cy="24" r="8" stroke="var(--blue)" stroke-width="1" stroke-dasharray="3 2"/>
-              <circle cx="24" cy="24" r="2" fill="var(--blue)"/>
-              <path d="M24 8v4M40 24h-4M24 40v-4M8 24h4" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/>
-              <circle cx="36" cy="12" r="3" stroke="var(--green)" stroke-width="1.2"/>
-            </svg>
-          </div>
-          <h3 class="project-name">Network Scanner</h3>
-          <p class="project-desc">
-            A lightweight Python-based network scanning tool built on raw
-            sockets and Scapy. Performs host discovery, port scanning,
-            service detection, and outputs structured JSON reports.
-          </p>
-          <div class="project-tags">
-            <span class="ptag">Python</span>
-            <span class="ptag">Scapy</span>
-            <span class="ptag">Networking</span>
-          </div>
-          <div class="project-footer">
-            <a href="#" class="project-link">View Code <span>→</span></a>
-            <div class="project-lang-dot"></div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       TERMINAL SECTION
-  ============================================================ -->
-  <section class="section terminal-section" id="terminal">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">// 04</span>
-        <h2 class="section-title">System <span class="accent">Terminal</span></h2>
-        <div class="section-line"></div>
-      </div>
-
-      <div class="terminal-wrap reveal">
-        <div class="terminal-window">
-          <!-- Window chrome -->
-          <div class="terminal-bar">
-            <div class="terminal-dots">
-              <span class="tdot red"></span>
-              <span class="tdot yellow"></span>
-              <span class="tdot green"></span>
-            </div>
-            <div class="terminal-title">hasan@sec-lab: ~</div>
-            <div class="terminal-actions">
-              <span>⚙</span>
-            </div>
-          </div>
-
-          <!-- Terminal body -->
-          <div class="terminal-body" id="terminalBody">
-            <div class="term-prompt">
-              <span class="prompt-user">hasan</span><span class="prompt-at">@</span><span class="prompt-host">sec-lab</span><span class="prompt-path">:~$</span>
-            </div>
-            <!-- Lines are injected by JS -->
-            <div id="terminalOutput"></div>
-            <div class="term-cursor-line">
-              <span class="prompt-user">hasan</span><span class="prompt-at">@</span><span class="prompt-host">sec-lab</span><span class="prompt-path">:~$</span>
-              <span class="term-live-cursor">█</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       CONTACT SECTION
-  ============================================================ -->
-  <section class="section contact" id="contact">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">// 05</span>
-        <h2 class="section-title">Establish <span class="accent">Contact</span></h2>
-        <div class="section-line"></div>
-      </div>
-
-      <div class="contact-grid">
-        <!-- Contact form -->
-        <div class="contact-form-wrap reveal">
-          <div class="glass-card contact-card">
-            <div class="card-header-bar">
-              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green-dot"></span>
-              <span class="card-title-tag">send_message.sh</span>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="contactName">// NAME</label>
-              <input class="form-input" type="text" id="contactName" placeholder="Your name..." autocomplete="off" />
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="contactEmail">// EMAIL</label>
-              <input class="form-input" type="email" id="contactEmail" placeholder="your@email.com" autocomplete="off" />
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="contactMsg">// MESSAGE</label>
-              <textarea class="form-input form-textarea" id="contactMsg" rows="5" placeholder="Type your message..."></textarea>
-            </div>
-            <button class="btn-primary btn-submit" id="submitBtn" onclick="handleFormSubmit()">
-              <span class="btn-label">Transmit Message</span>
-              <span class="btn-icon">→</span>
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="logo">
+                <span class="logo-accent">&lt;</span>Hasan<span class="logo-accent">.Sec/&gt;</span>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle Navigation">
+                <i class="fas fa-bars"></i>
             </button>
-            <div id="formFeedback" class="form-feedback"></div>
-          </div>
+            <nav class="nav-menu">
+                <a href="#hero" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#certifications" class="nav-link">Certs</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
         </div>
+    </header>
 
-        <!-- Social / info panel -->
-        <div class="contact-info reveal">
-          <div class="glass-card info-card">
-            <div class="card-header-bar">
-              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green-dot"></span>
-              <span class="card-title-tag">socials.json</span>
-            </div>
-            <div class="info-content">
-              <p class="info-intro">
-                Available for internships, collaborations, and security research projects.
-                Let's connect and build something secure.
-              </p>
-
-              <div class="social-links">
-                <a href="https://github.com/hasancyber07" target="_blank" rel="noopener" class="social-link">
-                  <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                  </svg>
-                  <span>GitHub</span>
-                  <span class="link-arrow">↗</span>
-                </a>
-                <a href="https://www.linkedin.com/in/h%C9%99s%C9%99n-islaml%C4%B1-400a4934b/" target="_blank" rel="noopener" class="social-link">
-                  <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                  </svg>
-                  <span>LinkedIn</span>
-                  <span class="link-arrow">↗</span>
-                </a>
-                <a href="mailto:hesenelnuroglu07@gmail.com" class="social-link">
-                  <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <rect x="2" y="4" width="20" height="16" rx="2"/>
-                    <path d="m2 7 10 7 10-7"/>
-                  </svg>
-                  <span>Email</span>
-                  <span class="link-arrow">↗</span>
-                </a>
-              </div>
-
-              <!-- Status panel -->
-              <div class="availability-panel">
-                <div class="avail-label">// CURRENT STATUS</div>
-                <div class="avail-row">
-                  <span class="avail-dot pulse"></span>
-                  <span class="avail-text">Open to opportunities</span>
-                </div>
-                <div class="avail-row">
-                  <span class="avail-tag">Student</span>
-                  <span class="avail-tag">Remote OK</span>
-                  <span class="avail-tag">Internship</span>
-                </div>
-              </div>
-            </div>
-          </div>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-background">
+            <div class="grid-overlay"></div>
+            <div class="glow-orb orb-1"></div>
+            <div class="glow-orb orb-2"></div>
         </div>
-      </div>
-    </div>
-  </section>
+        <div class="hero-content-wrapper container">
+            <div class="hero-image reveal-on-scroll">
+                <div class="pfp-container">
+                    <img src="pfp.png" alt="Hasan Islamli Profile Picture" class="pfp-img">
+                </div>
+            </div>
+            <div class="hero-content">
+                <p class="hero-subtitle">Hi, my name is</p>
+                <h1 class="hero-title">Hasan Islamli.</h1>
+                <h2 class="hero-tagline">I secure networks, defend systems, and analyze threats.</h2>
+                <p class="hero-description">
+                    Cybersecurity Student & Aspiring Professional focused on Information Security, network security, and defensive operations. Actively building practical expertise through hands-on labs and industry-oriented internships.
+                </p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="Hasan_Islamli_CV.pdf" target="_blank" class="btn btn-secondary">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                </div>
+                <div class="hero-socials">
+                    <a href="https://github.com/HasanIslamli" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/h%C9%99s%C9%99n-islaml%C4%B1-400a4934b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span class="mouse">
+                <span class="wheel"></span>
+            </span>
+            <span class="scroll-text">Scroll Down</span>
+        </div>
+    </section>
 
-  <!-- ============================================================
-       FOOTER
-  ============================================================ -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-logo">
-        <span class="logo-bracket">[</span>HASAN<span class="logo-accent">_SEC</span><span class="logo-bracket">]</span>
-      </div>
-      <div class="footer-copy">
-        &copy; 2025 Hasan. Built with <span class="accent">passion</span> & <span class="accent">code</span>.
-      </div>
-      <div class="footer-tag">
-        <span class="status-dot small"></span> ALL SYSTEMS OPERATIONAL
-      </div>
-    </div>
-  </footer>
+    <!-- About Me Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">01.</span>
+                <h2 class="section-title">About Me</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>
+                        I am a Cybersecurity student with a deep-rooted passion for securing digital environments and defending against evolving cyber threats. My journey is defined by a commitment to continuous learning and practical, hands-on experience.
+                    </p>
+                    <p>
+                        Currently, I am honing my technical skills through rigorous lab environments on platforms like TryHackMe and Hack The Box, focusing on areas such as network security, web application auditing, and defensive operations. I am proficient with industry-standard tools including Nmap, Burp Suite, and Wireshark, and I leverage Linux and Python to automate and enhance security analysis.
+                    </p>
+                    <p>
+                        I thrive on solving complex technical challenges and understanding the mechanics of secure systems. My objective is to bridge the gap between academic theory and industry practice, growing into a skilled professional who can contribute to robust security postures and resilient infrastructures.
+                    </p>
+                </div>
+                <div class="about-visual">
+                    <div class="profile-card">
+                        <div class="profile-frame">
+                            <div class="profile-placeholder">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script src="script.js"></script>
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">02.</span>
+                <h2 class="section-title">Experience</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="experience-timeline">
+                <div class="timeline-item reveal-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Cybersecurity Intern</h3>
+                        <p class="timeline-company">CodeAlpha | Remote</p>
+                        <p class="timeline-date">Aug 2026 – Present</p>
+                        <ul class="experience-list">
+                            <li>Selected for a Cybersecurity Internship focused on developing practical cybersecurity skills and gaining industry-oriented experience.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Cybersecurity Trainee</h3>
+                        <p class="timeline-company">Holberton School Azerbaijan | Azerbaijan</p>
+                        <p class="timeline-date">Mar 2026 – Present</p>
+                        <ul class="experience-list">
+                            <li>Developing practical cybersecurity skills through hands-on security labs and intensive training.</li>
+                            <li>Working with core cybersecurity concepts including network security, web application security, and vulnerability assessment.</li>
+                            <li>Practicing security investigation and defensive techniques in controlled lab environments.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">03.</span>
+                <h2 class="section-title">Education</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="education-grid">
+                <div class="edu-card reveal-on-scroll">
+                    <div class="edu-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="edu-info">
+                        <h3>Bachelor's degree in Cyber Security</h3>
+                        <p class="edu-school">Azerbaijan University of Architecture and Construction</p>
+                        <p class="edu-date">Sep 2024 – Present</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">04.</span>
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="skills-grid">
+                <!-- Skill 1: Network & Web Security -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 class="skill-title">Network & Web Security</h3>
+                    <p class="skill-description">
+                        Focused on vulnerability assessment, traffic analysis, and auditing web application security against critical risks.
+                    </p>
+                    <div class="skill-tags">
+                        <span>Nmap</span>
+                        <span>Burp Suite</span>
+                        <span>Wireshark</span>
+                        <span>Vulnerability Assessment</span>
+                        <span>Network Security</span>
+                        <span>Web App Security</span>
+                    </div>
+                </div>
+
+                <!-- Skill 2: SecOps & Linux -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-linux"></i>
+                    </div>
+                    <h3 class="skill-title">SecOps & Linux</h3>
+                    <p class="skill-description">
+                        Configuring Linux environments, monitoring security events, and deploying defensive controls with SIEM tools.
+                    </p>
+                    <div class="skill-tags">
+                        <span>Linux</span>
+                        <span>Wazuh</span>
+                        <span>SOC Operations</span>
+                        <span>Security Monitoring</span>
+                    </div>
+                </div>
+
+                <!-- Skill 3: Programming & Automation -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3 class="skill-title">Programming & Automation</h3>
+                    <p class="skill-description">
+                        Writing utility scripts and automation tools to enhance security analysis and streamline workflows.
+                    </p>
+                    <div class="skill-tags">
+                        <span>Python</span>
+                        <span>Bash</span>
+                        <span>Security Automation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">05.</span>
+                <h2 class="section-title">Certifications</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="certs-grid">
+                <div class="cert-card reveal-on-scroll in-progress">
+                    <i class="fas fa-certificate cert-icon"></i>
+                    <div class="cert-info">
+                        <h3>CompTIA Security+ (SY0-701)</h3>
+                        <p class="cert-status">In Progress</p>
+                    </div>
+                </div>
+                <div class="cert-card reveal-on-scroll completed">
+                    <i class="fas fa-award cert-icon"></i>
+                    <div class="cert-info">
+                        <h3>Cisco Packet Tracer</h3>
+                        <p class="cert-status">Completed — Network Basics</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">06.</span>
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>
+                        I am currently a Cybersecurity Intern at CodeAlpha and am open to future internship opportunities, junior cybersecurity roles, collaborative security projects, and professional networking. If you have a question or just want to say hi, my inbox is always open!
+                    </p>
+                    <div class="contact-details">
+                        <div class="detail-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:hesenelnuroglu07@gmail.com">hesenelnuroglu07@gmail.com</a>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+994554230049">+994 55 423 00 49</a>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-location-dot"></i>
+                            <span>Baku, Azerbaijan</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <form id="portfolio-contact-form" class="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required placeholder=" ">
+                            <label for="name">Your Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required placeholder=" ">
+                            <label for="email">Your Email</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
+                            <label for="message">Your Message</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <div id="form-feedback" class="form-feedback"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="social-links">
+                <a href="https://github.com/HasanIslamli" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/h%C9%99s%C9%99n-islaml%C4%B1-400a4934b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <p class="footer-text">&copy; 2026 Hasan Islamli. Securely built with passion and code.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Navbar scroll effect
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Hamburger Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.className = 'fas fa-times';
+            } else {
+                icon.className = 'fas fa-bars';
+            }
+        });
+
+        // Close menu on nav-link click
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                menuToggle.classList.remove('active');
+                menuToggle.querySelector('i').className = 'fas fa-bars';
+            });
+        });
+
+        // Highlight active nav-link on scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Back to Top functionality
+        const backToTopBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Scroll Reveal effect
+        const revealElements = document.querySelectorAll('.reveal-on-scroll, section');
+        const revealOnScroll = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        revealElements.forEach(el => revealOnScroll.observe(el));
+
+        // Contact Form Handling
+        const contactForm = document.getElementById('portfolio-contact-form');
+        const formFeedback = document.getElementById('form-feedback');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get values
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (!name || !email || !message) {
+                showFeedback('Please fill out all fields.', 'error');
+                return;
+            }
+
+            // Simulate form submission
+            const submitBtn = contactForm.querySelector('.btn-submit');
+            const originalBtnHtml = submitBtn.innerHTML;
+            
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span>Sending...</span><i class="fas fa-spinner fa-spin"></i>';
+
+            setTimeout(() => {
+                showFeedback(`Thank you, ${name}! As this is a static portfolio, this form is currently a UI demo. Please contact me directly via email.`, 'success');
+                contactForm.reset();
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnHtml;
+            }, 1200);
+        });
+
+        function showFeedback(text, type) {
+            formFeedback.innerText = text;
+            formFeedback.className = `form-feedback ${type} active`;
+            formFeedback.setAttribute('aria-live', 'polite');
+            
+            setTimeout(() => {
+                formFeedback.classList.remove('active');
+            }, 5000);
+        }
+    </script>
 </body>
 </html>
